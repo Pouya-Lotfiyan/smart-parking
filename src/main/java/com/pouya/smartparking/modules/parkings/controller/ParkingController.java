@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-//@EnableScheduling
+@EnableScheduling
 @RestController
 @RequestMapping("/parkings")
 public class ParkingController {
@@ -36,7 +36,7 @@ public class ParkingController {
         return  this.parkingService.enter(vehicle);
     }
 
-//    @Scheduled(fixedRate = 5000)
+    @Scheduled(fixedRate = 5000)
     @GetMapping(value="/enter/scheduled")
     public List<Parking> scheduledInsert() {
         return  this.parkingService.scheduledInsert(3);
